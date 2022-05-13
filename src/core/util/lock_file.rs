@@ -4,6 +4,8 @@ use crate::core::error::failed_to_open_lock_file_error::FailedToOpenLockfileErro
 use crate::core::error::initialization_error::InitializationError;
 use crate::core::error::lock_file_error::{LockFileError, LockfileErrorTypes};
 
+use regex::Regex;
+use lazy_static::lazy_static;
 
 lazy_static! {
     static ref REMOTING_AUTH_TOKEN: Regex = Regex::new("--remoting-auth-token=([\\w-]*)").unwrap();

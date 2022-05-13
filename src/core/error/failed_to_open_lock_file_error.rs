@@ -1,12 +1,14 @@
 use std::fmt;
+use std::io;
+use std::io::Error;
 
 #[derive(Debug)]
 pub struct FailedToOpenLockfileError {
-    _error: IOError
+    _error: Error
 }
 
 impl FailedToOpenLockfileError {
-    pub(crate) fn new(error: IOError) -> FailedToOpenLockfileError {
+    pub(crate) fn new(error: Error) -> FailedToOpenLockfileError {
         return FailedToOpenLockfileError {_error: error};
     }
 }
