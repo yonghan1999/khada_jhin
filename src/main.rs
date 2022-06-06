@@ -1,5 +1,5 @@
 mod core;
-
 fn main() {
-    println!("Hello, world!");
+    let lockfile_content = core::util::lock_file::get_lockfile();
+    println!("{}--{}--{}",lockfile_content.as_ref().unwrap().protocol,lockfile_content.as_ref().unwrap().password,lockfile_content.as_ref().unwrap().port);
 }

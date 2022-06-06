@@ -8,3 +8,5 @@ edition = "2021"
 [dependencies]
 lazy_static = "1.4.0"
 regex = "1.5.5"
+crossterm = "0.23.2"
+encoding = "0.2.33"
