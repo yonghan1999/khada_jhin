@@ -1,7 +1,6 @@
 use crate::core::error::failed_to_open_lock_file_error::FailedToOpenLockfileError;
 use crate::core::error::initialization_error::InitializationError;
 use crate::core::error::lock_file_error::{LockFileError, LockfileErrorTypes};
-use std::fs::read_to_string;
 use std::process::{Command, Stdio};
 
 use encoding::{Encoding, DecoderTrap};
@@ -61,6 +60,9 @@ pub fn get_lockfile() -> Result<LockfileContents, InitializationError> {
                 LockfileErrorTypes::LeagueNotRunning,
             ))),
         }
+
+
+        
     } else {
         if cfg!(target_os = "macos") {
             let out = Command::new("ps")
