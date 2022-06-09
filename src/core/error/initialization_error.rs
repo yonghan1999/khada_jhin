@@ -1,10 +1,9 @@
 use crate::core::error::failed_to_open_lock_file_error::FailedToOpenLockfileError;
-use crate::core::error::lock_file_error::LockFileError;
+use crate::core::error::lcu_address_error::LcuAddressError;
 
 #[derive(Debug)]
 pub enum InitializationError {
-    GenericLockfile(LockFileError),
-    FailedToOpenLockfile(FailedToOpenLockfileError),
+    CommandNotFound(LcuAddressError),
     UnknownError(String)
 }
 
